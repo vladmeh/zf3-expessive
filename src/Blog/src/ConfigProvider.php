@@ -2,6 +2,7 @@
 
 namespace Blog;
 use Doctrine\ORM\Mapping\Driver\SimplifiedYamlDriver;
+use Zend\Expressive\Application;
 
 /**
  * The configuration provider for the Blog module
@@ -38,6 +39,11 @@ class ConfigProvider
             'invokables' => [
             ],
             'factories'  => [
+            ],
+            'delegators' => [
+                Application::class => [
+                    Factory\RoutesDelegator::class,
+                ],
             ],
         ];
     }
