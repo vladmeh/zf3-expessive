@@ -1,6 +1,7 @@
 <?php
 
 namespace Blog;
+use Doctrine\ORM\Mapping\Driver\SimplifiedYamlDriver;
 
 /**
  * The configuration provider for the Blog module
@@ -21,6 +22,7 @@ class ConfigProvider
     {
         return [
             'dependencies' => $this->getDependencies(),
+            'doctrine'     => $this->getDoctrine(),
             'templates'    => $this->getTemplates(),
         ];
     }
@@ -52,6 +54,26 @@ class ConfigProvider
                 'app'    => [__DIR__ . '/../templates/app'],
                 'error'  => [__DIR__ . '/../templates/error'],
                 'layout' => [__DIR__ . '/../templates/layout'],
+            ],
+        ];
+    }
+
+    public function getDoctrine()
+    {
+        return [
+            'driver' => [
+                'orm_default' => [
+                    'drivers' => [
+                        'Blog\Entity' => 'blog_entity',
+                    ],
+                ],
+                'blog_entity' => [
+                    'class' => SimplifiedYamlDriver::class,
+                    'cache' => 'array',
+                    'paths' => [
+                        dirname(__DIR__) . '/config/doctrine' => 'Blog\Entity',
+                    ],
+                ],
             ],
         ];
     }
