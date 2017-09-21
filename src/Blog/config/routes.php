@@ -37,4 +37,4 @@ use Blog\Action;
 
 // Setup routes:
 $app->get('/blog', Action\BlogPostListAction::class, 'blog_post_list');
-//$app->get('/blog/view/:blog_post_id', Action\BlogPostViewAction::class, 'blog_post_view');
+$app->get('/blog/view/:blog_post_id', Action\BlogPostViewAction::class, 'blog_post_view');
