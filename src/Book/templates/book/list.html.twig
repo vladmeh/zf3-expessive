@@ -3,7 +3,21 @@
 {% block title %}Book{% endblock %}
 
 {% block content %}
-    <div class="jumbotron">
-        <h1>Book pages</h1>
+    <h1>Books list</h1>
+    <div class="row">
+
+        {% for book in books %}
+
+            <div class="col-md-4">
+                <h2>
+                    <a href="/blog/view/{{ book.id }}">
+                        <i class="fa fa-refresh"></i> {{ book.title }}
+                    </a>
+                </h2>
+                <p>
+                    {{ book.content }}
+                </p>
+            </div>
+        {% endfor %}
     </div>
 {% endblock %}
