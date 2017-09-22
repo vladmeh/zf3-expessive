@@ -38,6 +38,8 @@ class ConfigProvider
             'invokables' => [
             ],
             'factories' => [
+                Model\Repository\BookRepositoryInterface::class => Factory\BookRepositoryFactory::class,
+                Model\Storage\BookStorageInterface::class => Factory\BookTableGatewayFactory::class
             ],
             'delegators' => [
                 Application::class => [
