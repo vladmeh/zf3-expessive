@@ -25,20 +25,20 @@ interface BookStorageInterface
     public function fetchBookById($id);
 
     /**
-     * @param BookEntity $album
+     * @param BookEntity $entity
      * @return bool
      */
-    public function insertAlbum(BookEntity $album);
+    public function insertBook(BookEntity $entity);
 
     /**
-     * @param BookEntity $album
+     * @param BookEntity $entity
      * @return bool
      */
-    public function updateAlbum(BookEntity $album);
+    public function updateBook(BookEntity $entity);
 
     /**
-     * @param BookEntity $album
+     * @param BookEntity $entity
      * @return bool
      */
-    public function deleteAlbum(BookEntity $album);
+    public function deleteBook(BookEntity $entity);
 }
