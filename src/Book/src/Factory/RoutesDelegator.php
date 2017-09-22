@@ -7,7 +7,7 @@
  *
  */
 
-namespace Blog\Factory;
+namespace Book\Factory;
 
 
 use Psr\Container\ContainerInterface;
