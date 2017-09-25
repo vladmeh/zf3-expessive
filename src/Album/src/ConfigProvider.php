@@ -2,6 +2,7 @@
 
 namespace Album;
 use Zend\Expressive\Application;
+use Illuminate\Database\Capsule\Manager;
 
 /**
  * The configuration provider for the Album module
@@ -37,10 +38,12 @@ class ConfigProvider
             'invokables' => [
             ],
             'factories'  => [
+                //Manager::class => Factory\CapsuleFactory::class,
             ],
             'delegators' => [
                 Application::class => [
                     Factory\RoutesDelegator::class,
+                    Factory\CapsuleFactory::class,
                 ],
             ],
         ];
