@@ -1,11 +1,10 @@
 <?php
 
-namespace Blog;
-use Doctrine\ORM\Mapping\Driver\SimplifiedYamlDriver;
+namespace Album;
 use Zend\Expressive\Application;
 
 /**
- * The configuration provider for the Blog module
+ * The configuration provider for the Album module
  *
  * @see https://docs.zendframework.com/zend-component-installer/
  */
@@ -23,7 +22,6 @@ class ConfigProvider
     {
         return [
             'dependencies' => $this->getDependencies(),
-            'doctrine'     => $this->getDoctrine(),
             'templates'    => $this->getTemplates(),
         ];
     }
@@ -57,27 +55,7 @@ class ConfigProvider
     {
         return [
             'paths' => [
-                'blog'    => [__DIR__ . '/../templates/blog'],
-            ],
-        ];
-    }
-
-    public function getDoctrine()
-    {
-        return [
-            'driver' => [
-                'orm_default' => [
-                    'drivers' => [
-                        'Blog\Entity' => 'blog_entity',
-                    ],
-                ],
-                'blog_entity' => [
-                    'class' => SimplifiedYamlDriver::class,
-                    'cache' => 'array',
-                    'paths' => [
-                        dirname(__DIR__) . '/config/doctrine' => 'Blog\Entity',
-                    ],
-                ],
+                'album' => [__DIR__ . '/../templates/album'],
             ],
         ];
     }
