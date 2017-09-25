@@ -2,6 +2,8 @@
 
 namespace Book;
 
+use Zend\Db\Adapter\Adapter;
+use Zend\Db\Adapter\AdapterServiceFactory;
 use Zend\Expressive\Application;
 
 /**
@@ -38,6 +40,7 @@ class ConfigProvider
             'invokables' => [
             ],
             'factories' => [
+                Adapter::class => AdapterServiceFactory::class,
                 Model\Repository\BookRepositoryInterface::class => Factory\BookRepositoryFactory::class,
                 Model\Storage\BookStorageInterface::class => Factory\BookTableGatewayFactory::class
             ],

@@ -24,7 +24,7 @@ return [
         // class name.
         'invokables' => [
             // Fully\Qualified\InterfaceName::class => Fully\Qualified\ClassName::class,
-            Doctrine\DBAL\Logging\DebugStack::class => Doctrine\DBAL\Logging\DebugStack::class,
+            //Doctrine\DBAL\Logging\DebugStack::class => Doctrine\DBAL\Logging\DebugStack::class,
 
             Helper\ServerUrlHelper::class => Helper\ServerUrlHelper::class,
             Middleware\ImplicitHeadMiddleware::class => Middleware\ImplicitHeadMiddleware::class,
@@ -35,7 +35,7 @@ return [
             Application::class                => Container\ApplicationFactory::class,
             Delegate\NotFoundDelegate::class  => Container\NotFoundDelegateFactory::class,
 
-            Doctrine\ORM\EntityManager::class => ContainerInteropDoctrine\EntityManagerFactory::class,
+            //Doctrine\ORM\EntityManager::class => ContainerInteropDoctrine\EntityManagerFactory::class,
 
             Helper\ServerUrlMiddleware::class => Helper\ServerUrlMiddlewareFactory::class,
             Helper\UrlHelper::class           => Helper\UrlHelperFactory::class,
@@ -45,7 +45,7 @@ return [
             Middleware\ErrorResponseGenerator::class         => Container\ErrorResponseGeneratorFactory::class,
             Middleware\NotFoundHandler::class                => Container\NotFoundHandlerFactory::class,
 
-            Zend\Db\Adapter\Adapter::class => Zend\Db\Adapter\AdapterServiceFactory::class,
+            //Zend\Db\Adapter\Adapter::class => Zend\Db\Adapter\AdapterServiceFactory::class,
         ],
     ],
 ];

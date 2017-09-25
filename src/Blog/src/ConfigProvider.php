@@ -1,6 +1,9 @@
 <?php
 
 namespace Blog;
+use ContainerInteropDoctrine\EntityManagerFactory;
+use Doctrine\DBAL\Logging\DebugStack;
+use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Mapping\Driver\SimplifiedYamlDriver;
 use Zend\Expressive\Application;
 
@@ -37,8 +40,10 @@ class ConfigProvider
     {
         return [
             'invokables' => [
+                DebugStack::class => DebugStack::class,
             ],
             'factories'  => [
+                EntityManager::class => EntityManagerFactory::class,
             ],
             'delegators' => [
                 Application::class => [
